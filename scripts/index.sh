@@ -31,9 +31,8 @@ HEADERS=(
   "application/vnd.github.nebula-preview+json"
 )
 
-ARGS=$(printf -- "-H 'Accept: %s' " ${HEADERS[@]})
+ARGS=$(printf -- "-H 'Accept: %s' " "${HEADERS[@]}")
 
-for NAME in "${!ENDPOINTS[@]}"
-do
-  echo ::set-output name=$NAME::$(eval gh api ${ENDPOINTS[$NAME]} $ARGS)
+for NAME in "${!ENDPOINTS[@]}"; do
+  echo ::set-output name=$NAME::"$(eval gh api "${ENDPOINTS[$NAME]}" "$ARGS")"
 done

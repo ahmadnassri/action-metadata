@@ -23,9 +23,7 @@ jobs:
       - id: metadata
         uses: ahmadnassri/action-metadata@v1
 
-      # checks if this repository is a template repository and prints the template repository name
-      - if: ${{ !fromJSON(steps.metadata.outputs.repository).is_template }}
-        run: echo ${{ fromJSON(steps.metadata.outputs.repository).template_repository.name }}
+      - run: echo ${{ fromJSON(steps.metadata.outputs.repository).is_template }}
 ```
 
   [context]: https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions

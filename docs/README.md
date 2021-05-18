@@ -4,7 +4,6 @@ GitHub Actions already contains plenty of [context](https://docs.github.com/en/a
 
 However, it's very limited, and does not include the entirety of the repository metadata, for example: [API Previews metadata](https://docs.github.com/en/rest/overview/api-previews)
 
-
 ## Usage
 
 ```yaml
