@@ -1,0 +1,13 @@
+name: Actions Metadata
+description: All repo and event metadata for use in Actions workflows
+
+branding:
+  icon: info
+  color: purple
+
+runs:
+  using: composite
+  steps:
+    - name:
+      run: ${{ github.action_path }}/scripts/index.sh
+      shell: bash

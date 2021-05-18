@@ -1,8 +1,8 @@
 version: 2.0
 
-id: template-template
+id: action-metadata
 
 about:
-  title: Template for templates
-  description: A template for GitHub Template Repositories!
-  repository: ahmadnassri/template-template
+  title: Actions Metadata
+  description: All repo and event metadata for use in Actions workflows
+  repository: ahmadnassri/action-metadata
