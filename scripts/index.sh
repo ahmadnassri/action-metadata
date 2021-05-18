@@ -31,6 +31,8 @@ HEADERS=(
   "application/vnd.github.nebula-preview+json"
 )
 
+gh auth login --with-token
+
 ARGS=$(printf -- "-H 'Accept: %s' " "${HEADERS[@]}")
 
 for NAME in "${!ENDPOINTS[@]}"; do
