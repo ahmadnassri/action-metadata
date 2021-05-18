@@ -1,0 +1,13 @@
+additional:
+  # temporarily include repos manually # https://github.com/github/docs/issues/4894
+  - action-npm-global-path
+  - action-google-cloud-sql-proxy
+  - action-github-registry-npm-proxy
+
+files:
+  - "!README.md"
+  - "!docs/**"
+  - "!colophon.yml"
+  - "!docker-compose.yml"
+  - "!**/template-sync.yml"
+  - "!.github/workflows/push.yml"
