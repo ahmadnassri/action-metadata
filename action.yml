@@ -5,9 +5,21 @@ branding:
   icon: info
   color: purple
 
+inputs:
+  token:
+    description: github token to use
+    default: ${{ github.token }}
+
+outputs:
+  repository:
+    description: repository metadata
+    value: ${{ steps.data.outputs.repository }}
+
 runs:
   using: composite
   steps:
-    - name:
-      run: ${{ github.action_path }}/scripts/index.sh
+    - id: data
       shell: bash
+      run: ${{ github.action_path }}/scripts/index.sh
+      env:
+        GH_TOKEN: ${{ inputs.token }}

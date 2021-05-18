@@ -31,10 +31,9 @@ HEADERS=(
   "application/vnd.github.nebula-preview+json"
 )
 
-gh auth login --with-token
-
 ARGS=$(printf -- "-H 'Accept: %s' " "${HEADERS[@]}")
 
 for NAME in "${!ENDPOINTS[@]}"; do
-  echo ::set-output name=$NAME::"$(eval gh api "${ENDPOINTS[$NAME]}" "$ARGS")"
+  echo ::debug::fetch ${NAME}
+  echo ::set-output name=${NAME}::"$(eval gh api "${ENDPOINTS[$NAME]}" "$ARGS")"
 done

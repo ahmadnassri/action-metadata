@@ -12,8 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+
       - id: metadata
         uses: ahmadnassri/action-metadata@v1
 
-      - run: echo ${{ fromJSON(steps.metadata.outputs.repository).is_template }}
+      # checks if this repository is a template repository and prints the template repository name
+      - if: ${{ !fromJSON(steps.metadata.outputs.repository).is_template }}
+        run: echo ${{ fromJSON(steps.metadata.outputs.repository).template_repository.name }}
 ```
