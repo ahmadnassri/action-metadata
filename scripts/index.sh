@@ -94,6 +94,8 @@ for PREFIX in "${!PROPS_PREFIX[@]}"; do
   declare -n PROPS_ARRAY=${VARNAME}
   for PROP in "${PROPS_ARRAY[@]}"; do
     [[ $KEY = "repository" ]] && JQ_KEY="" || JQ_KEY=".${KEY}"
-    echo ::set-output name=${KEY}_${PROP}::"$(echo "${JSON}" | jq -r ${JQ_KEY}.${PROP})"
+    VAL=$(echo "${JSON}" | jq -r ${JQ_KEY}.${PROP})
+    echo ::set-output name=${KEY}_${PROP}::${VAL}
+    echo ::debug::${KEY}_${PROP}: ${VAL}
   done
 done
