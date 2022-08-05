@@ -14,6 +14,7 @@ PROPS_PREFIX[LICENSE]="license"
 PROPS_PREFIX[TEMPLATE_REPO]="template_repository"
 
 # props we want to export
+# shellcheck disable=SC2034
 REPO_PROPS=(
   "id"
   "name"
@@ -55,6 +56,7 @@ REPO_PROPS=(
   "network_count"
 )
 
+# shellcheck disable=SC2034
 OWNER_PROPS=(
   "id"
   "login"
@@ -63,12 +65,14 @@ OWNER_PROPS=(
   "type"
 )
 
+# shellcheck disable=SC2034
 LICENSE_PROPS=(
   "key"
   "name"
   "spdx_id"
 )
 
+# shellcheck disable=SC2034
 TEMPLATE_REPO_PROPS=(
   "id"
   "name"
@@ -89,7 +93,7 @@ for PREFIX in "${!PROPS_PREFIX[@]}"; do
   KEY="${PROPS_PREFIX[$PREFIX]}"
   declare -n PROPS_ARRAY=${VARNAME}
   for PROP in "${PROPS_ARRAY[@]}"; do
-     [[ $KEY = "repository" ]] && JQ_KEY="" || JQ_KEY=".${KEY}"
-    echo ::set-output name=${KEY}_${PROP}::"$(echo $JSON | jq -r ${JQ_KEY}.${PROP})"
+    [[ $KEY = "repository" ]] && JQ_KEY="" || JQ_KEY=".${KEY}"
+    echo ::set-output name=${KEY}_${PROP}::"$(echo "${JSON}" | jq -r ${JQ_KEY}.${PROP})"
   done
 done

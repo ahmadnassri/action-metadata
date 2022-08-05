@@ -46,6 +46,10 @@ jobs:
 
 This action will output the following properties:
 
+<!-- markdownlint-capture -->
+
+<!-- markdownlint-disable MD034 -->
+
 | property                            | example                                                    |
 |-------------------------------------|------------------------------------------------------------|
 | `repository_json`                   | { ... } **full** JSON object of the current repository     |
@@ -54,7 +58,7 @@ This action will output the following properties:
 | `repository_full_name`              | ahmadnassri/action-metadata                                |
 | `repository_private`                | false                                                      |
 | `repository_html_url`               | <https://github.com/ahmadnassri/action-metadata>           |
-| `repository_description`            | get all the repo and event metadata for use in Actions     |
+| `repository_description`            | get all the repository metadata for use in Actions         |
 | `repository_fork`                   | false                                                      |
 | `repository_git_url`                | git://github.com/ahmadnassri/action-metadata.git           |
 | `repository_ssh_url`                | <git@github.com>:ahmadnassri/action-metadata.git           |
@@ -99,6 +103,8 @@ This action will output the following properties:
 | `template_repository_name`          | template-action-composite                                  |
 | `template_repository_full_name`     | ahmadnassri/template-action-composite                      |
 | `template_repository_html_url`      | <https://github.com/ahmadnassri/template-action-composite> |
+
+<!-- markdownlint-restore -->
 
   [context]: https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions
 
