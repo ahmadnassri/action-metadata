@@ -11,9 +11,225 @@ inputs:
     default: ${{ github.token }}
 
 outputs:
-  repository:
-    description: repository metadata
-    value: ${{ steps.data.outputs.repository }}
+  repository_json:
+    description: full repository data
+    value: ${{ steps.data.outputs.repository_json }}
+
+  repository_id:
+    description: repository.id
+    value: ${{ steps.data.outputs.repository_id }}
+
+  repository_name:
+    description: repository.name
+    value: ${{ steps.data.outputs.repository_name }}
+
+  repository_full_name:
+    description: repository.full_name
+    value: ${{ steps.data.outputs.repository_full_name }}
+
+  repository_private:
+    description: repository.private
+    value: ${{ steps.data.outputs.repository_private }}
+
+  repository_html_url:
+    description: repository.html_url
+    value: ${{ steps.data.outputs.repository_html_url }}
+
+  repository_description:
+    description: repository.description
+    value: ${{ steps.data.outputs.repository_description }}
+
+  repository_fork:
+    description: repository.fork
+    value: ${{ steps.data.outputs.repository_fork }}
+
+  repository_created_at:
+    description: repository.created_at
+    value: ${{ steps.data.outputs.repository_created_at }}
+
+  repository_updated_at:
+    description: repository.updated_at
+    value: ${{ steps.data.outputs.repository_updated_at }}
+
+  repository_pushed_at:
+    description: repository.pushed_at
+    value: ${{ steps.data.outputs.repository_pushed_at }}
+
+  repository_git_url:
+    description: repository.git_url
+    value: ${{ steps.data.outputs.repository_git_url }}
+
+  repository_ssh_url:
+    description: repository.ssh_url
+    value: ${{ steps.data.outputs.repository_ssh_url }}
+
+  repository_clone_url:
+    description: repository.clone_url
+    value: ${{ steps.data.outputs.repository_clone_url }}
+
+  repository_svn_url:
+    description: repository.svn_url
+    value: ${{ steps.data.outputs.repository_svn_url }}
+
+  repository_homepage:
+    description: repository.homepage
+    value: ${{ steps.data.outputs.repository_homepage }}
+
+  repository_size:
+    description: repository.size
+    value: ${{ steps.data.outputs.repository_size }}
+
+  repository_stargazers_count:
+    description: repository.stargazers_count
+    value: ${{ steps.data.outputs.repository_stargazers_count }}
+
+  repository_watchers_count:
+    description: repository.watchers_count
+    value: ${{ steps.data.outputs.repository_watchers_count }}
+
+  repository_language:
+    description: repository.language
+    value: ${{ steps.data.outputs.repository_language }}
+
+  repository_has_issues:
+    description: repository.has_issues
+    value: ${{ steps.data.outputs.repository_has_issues }}
+
+  repository_has_projects:
+    description: repository.has_projects
+    value: ${{ steps.data.outputs.repository_has_projects }}
+
+  repository_has_downloads:
+    description: repository.has_downloads
+    value: ${{ steps.data.outputs.repository_has_downloads }}
+
+  repository_has_wiki:
+    description: repository.has_wiki
+    value: ${{ steps.data.outputs.repository_has_wiki }}
+
+  repository_has_pages:
+    description: repository.has_pages
+    value: ${{ steps.data.outputs.repository_has_pages }}
+
+  repository_forks_count:
+    description: repository.forks_count
+    value: ${{ steps.data.outputs.repository_forks_count }}
+
+  repository_archived:
+    description: repository.archived
+    value: ${{ steps.data.outputs.repository_archived }}
+
+  repository_disabled:
+    description: repository.disabled
+    value: ${{ steps.data.outputs.repository_disabled }}
+
+  repository_open_issues_count:
+    description: repository.open_issues_count
+    value: ${{ steps.data.outputs.repository_open_issues_count }}
+
+  repository_allow_forking:
+    description: repository.allow_forking
+    value: ${{ steps.data.outputs.allow_forking }}
+
+  repository_is_template:
+    description: repository.is_template
+    value: ${{ steps.data.outputs.repository_is_template }}
+
+  repository_web_commit_signoff_required:
+    description: repository.web_commit_signoff_required
+    value: ${{ steps.data.outputs.web_commit_signoff_required }}
+
+  repository_visibility:
+    description: repository.visibility
+    value: ${{ steps.data.outputs.repository_visibility }}
+
+  repository_default_branch:
+    description: repository.default_branch
+    value: ${{ steps.data.outputs.repository_default_branch }}
+
+  repository_allow_squash_merge:
+    description: repository.allow_squash_merge
+    value: ${{ steps.data.outputs.repository_allow_squash_merge }}
+
+  repository_allow_merge_commit:
+    description: repository.allow_merge_commit
+    value: ${{ steps.data.outputs.repository_allow_merge_commit }}
+
+  repository_allow_rebase_merge:
+    description: repository.allow_rebase_merge
+    value: ${{ steps.data.outputs.repository_allow_rebase_merge }}
+
+  repository_allow_auto_merge:
+    description: repository.allow_auto_merge
+    value: ${{ steps.data.outputs.repository_allow_auto_merge }}
+
+  repository_delete_branch_on_merge:
+    description: repository.delete_branch_on_merge
+    value: ${{ steps.data.outputs.repository_delete_branch_on_merge }}
+
+  repository_allow_update_branch:
+    description: repository.allow_update_branch
+    value: ${{ steps.data.outputs.allow_update_branch }}
+
+  repository_use_squash_pr_title_as_default:
+    description: repository.use_squash_pr_title_as_default
+    value: ${{ steps.data.outputs.use_squash_pr_title_as_default }}
+
+  repository_network_count:
+    description: repository.network_count
+    value: ${{ steps.data.outputs.repository_network_count }}
+
+  repository_subscribers_count:
+    description: repository.subscribers_count
+    value: ${{ steps.data.outputs.repository_subscribers_count }}
+
+  license_key:
+    description: repository.license.key
+    value: ${{ steps.data.outputs.license_key }}
+
+  license_name:
+    description: repository.license.name
+    value: ${{ steps.data.outputs.license_name }}
+
+  license_spdx_id:
+    description: repository.license.spdx_id
+    value: ${{ steps.data.outputs.license_spdx_id }}
+
+  owner_id:
+    description: repository.owner.id
+    value: ${{ steps.data.outputs.owner_id }}
+
+  owner_login:
+    description: repository.owner.login
+    value: ${{ steps.data.outputs.owner_login }}
+
+  owner_avatar_url:
+    description: repository.owner.avatar_url
+    value: ${{ steps.data.outputs.owner_avatar_url }}
+
+  owner_html_url:
+    description: repository.owner.html_url
+    value: ${{ steps.data.outputs.owner_html_url }}
+
+  owner_type:
+    description: repository.owner.type
+    value: ${{ steps.data.outputs.owner_type }}
+
+  template_repository_id:
+    description: repository.template_repository.id
+    value: ${{ steps.data.outputs.template_repository_id }}
+
+  template_repository_name:
+    description: repository.template_repository.name
+    value: ${{ steps.data.outputs.template_repository_name }}
+
+  template_repository_full_name:
+    description: repository.template_repository.full_name
+    value: ${{ steps.data.outputs.template_repository_full_name }}
+
+  template_repository_html_url:
+    description: repository.template_repository.html_url
+    value: ${{ steps.data.outputs.template_repository_html_url }}
 
 runs:
   using: composite
