@@ -87,7 +87,7 @@ TEMPLATE_REPO_PROPS=(
 for NAME in "${!ENDPOINTS[@]}"; do
   echo ::debug::fetch ${NAME}
   JSON=$(eval gh api "${ENDPOINTS[$NAME]}" "-H 'Accept: application/vnd.github+json'")
-  echo ::set-output name=${NAME}_json::"${JSON}"
+  echo ${NAME}_json="${JSON}" >> ${GITHUB_OUTPUT}
 done
 
 for PREFIX in "${!PROPS_PREFIX[@]}"; do
@@ -98,6 +98,6 @@ for PREFIX in "${!PROPS_PREFIX[@]}"; do
   declare -n PROPS_ARRAY=${VARNAME}
   for PROP in "${PROPS_ARRAY[@]}"; do
     [[ $KEY = "repository" ]] && JQ_KEY="" || JQ_KEY=".${KEY}"
-    echo ::set-output name=${KEY}_${PROP}::"$(echo "${JSON}" | jq -r ${JQ_KEY}.${PROP})"
+    echo ${KEY}_${PROP}="$(echo "${JSON}" | jq -r ${JQ_KEY}.${PROP})" >> ${GITHUB_OUTPUT}
   done
 done
